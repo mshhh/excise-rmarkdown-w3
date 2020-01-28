@@ -1,0 +1,6 @@
+---
+title: My Rmd document
+author: "Sihao Miao"
+date: "`r format(Sys.time(),'%d,%B,%Y')`"
+output: bookdown::html_document2
+---

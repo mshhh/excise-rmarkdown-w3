@@ -1,0 +1,39 @@
+---
+title: My Rmd document
+author: "Sihao Miao"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: bookdown::html_document2
+bibliography: example.bib
+---
+
+Here is some inline code `r 1 + 1`
+
+```{r starwars-plot, fig.cap= "A ggplot of starwars stuff"}
+library(tidyverse)
+starwars %>%
+  filter(species =="Human")%>% ggplot()+aes(x=height, y=mass)+geom_point()
+```
+
+We can see in Figure \@ref(fig:starwars-plot)...
+
+```{r starwars-tbl}
+starwars %>%
+  filter(species == "Human")%>%
+  select(name, height, mass, homeworld)%>%
+  knitr::kable(caption="A knitr kable table of starwars data")
+```
+
+We can see in Table \@ref(tab:starwars-tbl)...
+
+```{r, starwars-fig, fig.cap="Starwars figure"}
+knitr::include_graphics("https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960")
+```
+
+We can see in Figure \@ref(fig:starwars-fig)...
+
+We can see the article "Replication". [@kornberg1980replication]      
+
+[@orgel1992molecular] says something about molecular replication.
+
+
+# References cited
